@@ -36,8 +36,11 @@
     <ClCompile Include="LinkedList\CircularList.cpp">
       <Filter>LinkedList</Filter>
     </ClCompile>
+    <ClCompile Include="Labs\Week04.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="LinkedList\DoublyLinkedList.cpp">
-      <Filter>LinkedList</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

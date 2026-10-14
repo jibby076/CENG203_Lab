@@ -1,14 +1,27 @@
-// CENG203_Lab.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-#include "Labs/Labs.h"
+#include "Labs/Labs.h"              // Labs.h is in the Labs subfolder
+using namespace std;
 
-int main()
+int main()                          // the ONLY main() of the project
 {
-	std::cout << " 3. Week 3 - Linked lists" << std::endl;
-	switch (3) {
-		case 3: runWeek03();
-			break;
-	}
+    int choice;
+    do {
+        cout << "\n===== CENG203 Data Structures Lab =====" << endl;
+        cout << " 2. Week 2 - Project structure test" << endl;
+        cout << " 3. Week 3 - Linked lists" << endl;
+        cout << " 4. Week 4 - Stacks and queues" << endl;
+        cout << " 0. Exit" << endl;
+        cout << "Your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 2:  runWeek02(); break;
+        case 3:  runWeek03(); break;
+        case 4:  runWeek04(); break;
+        case 0:  cout << "Bye!" << endl; break;
+        default: cout << "Invalid choice!" << endl;
+        }
+    } while (choice != 0);
+
+    return 0;
 }
