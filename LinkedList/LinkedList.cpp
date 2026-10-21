@@ -1,112 +1,152 @@
-#include "LinkedList.h" // 1) your own header first
-
-#include <iostream> // 2) then what THIS file needs
-
+#include "LinkedList.h"
+#include <iostream>
 using namespace std;
 
-
-LinkedList::LinkedList() // LinkedList:: = member of LinkedList
-
+// =============================== Week 2 ===============================
+LinkedList::LinkedList()
 {
-
-	head = nullptr;
-
+    head = nullptr;
 }
+
 LinkedList::~LinkedList()
-
 {
-
-	while (head != nullptr) { // delete the nodes one by one
-
-		Node* temp = head;
-
-		head = head->next;
-
-		delete temp;
-
-	}
-
+    while (head != nullptr) {           // delete the nodes one by one
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
 }
-
 
 void LinkedList::insertAtFront(int value)
-
 {
-
-	Node* newNode = new Node;
-
-	newNode->data = value;
-
-	newNode->next = head;
-
-	head = newNode;
-
+    Node* newNode = new Node;
+    newNode->data = value;
+    newNode->next = head;
+    head = newNode;
 }
-
 
 void LinkedList::display() const
-
 {
-
-	for (Node* cur = head; cur != nullptr; cur = cur->next)
-
-		cout << cur->data << " -> ";
-
-	cout << "NULL" << endl;
-
+    for (Node* cur = head; cur != nullptr; cur = cur->next)
+        cout << cur->data << " -> ";
+    cout << "NULL" << endl;
 }
 
-
 bool LinkedList::isEmpty() const
-
 {
-
-	return head == nullptr;
-
+    return head == nullptr;
 }
 
 // =============================== Week 3 ===============================
-// Fill in these bodies question by question. The stubs compile and link,
-// so the whole project builds from the start.
-
 void LinkedList::insertAtEnd(int value)                     // Q2
 {
-	// TODO
+    Node* newNode = new Node;
+    newNode->data = value;
+    newNode->next = nullptr;
+
+    if (head == nullptr) {              // empty list: new node is the head
+        head = newNode;
+        return;
+    }
+    Node* cur = head;
+    while (cur->next != nullptr)        // walk to the LAST node
+        cur = cur->next;
+    cur->next = newNode;
 }
 
 int LinkedList::length() const                              // Q2
 {
-	return 0;                                               // TODO
+    int count = 0;
+    for (Node* cur = head; cur != nullptr; cur = cur->next)
+        count++;
+    return count;
 }
 
 void LinkedList::createFromArray(const int arr[], int n)    // Q2
 {
-	// TODO: call insertAtEnd() for every element
+    for (int i = 0; i < n; i++)
+        insertAtEnd(arr[i]);
 }
 
 int LinkedList::search(int value) const                     // Q3
 {
-	return -1;                                              // TODO
+    int index = 0;
+    for (Node* cur = head; cur != nullptr; cur = cur->next) {
+        if (cur->data == value)
+            return index;               // found: stop at the FIRST match
+        index++;
+    }
+    return -1;                          // visited every node, no match
 }
 
 int LinkedList::update(int oldValue, int newValue)          // Q4
 {
-	return 0;                                               // TODO
+    int changed = 0;
+    for (Node* cur = head; cur != nullptr; cur = cur->next) {
+        if (cur->data == oldValue) {
+            cur->data = newValue;
+            changed++;                  // no break: continue to the end
+        }
+    }
+    return changed;
 }
 
 bool LinkedList::insertAt(int index, int value)             // Q5
 {
-	return false;                                           // TODO
+    if (index < 0 || index > length())
+        return false;                   // list unchanged
+    if (index == 0) {
+        insertAtFront(value);
+        return true;
+    }
+    Node* prev = head;
+    for (int i = 0; i < index - 1; i++) // stop at the node BEFORE the index
+        prev = prev->next;
 
+    Node* newNode = new Node;
+    newNode->data = value;
+    newNode->next = prev->next;         // 1) new node points to the rest
+    prev->next = newNode;               // 2) predecessor points to new node
+    return true;
 }
 
 bool LinkedList::deleteValue(int value)                     // Q6
 {
-	return false;                                           // TODO
+    if (head == nullptr)                // case 1: empty list
+        return false;
+
+    if (head->data == value) {          // case 2: the head node
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return true;
+    }
+
+    Node* prev = head;                  // case 3: middle or last node
+    while (prev->next != nullptr && prev->next->data != value)
+        prev = prev->next;
+
+    if (prev->next == nullptr)          // case 4: not found
+        return false;
+
+    Node* temp = prev->next;
+    prev->next = temp->next;            // unlink ...
+    delete temp;                        // ... then free the memory
+    return true;
 }
 
 void LinkedList::merge(LinkedList& other)                   // Q7
 {
-	// TODO
+    if (other.head == nullptr)          // nothing to move
+        return;
+    if (head == nullptr) {
+        head = other.head;
+    }
+    else {
+        Node* cur = head;
+        while (cur->next != nullptr)    // walk to the last node of THIS
+            cur = cur->next;
+        cur->next = other.head;
+    }
+    other.head = nullptr;               // other gives up its nodes
 }
-
