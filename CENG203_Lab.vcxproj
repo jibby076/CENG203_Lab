@@ -140,12 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Labs\Week04.cpp" />
+    <ClCompile Include="Labs\Week05.cpp" />
     <ClCompile Include="LinkedList\DoublyLinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Labs\Week02.cpp" />
     <ClCompile Include="Labs\Week03.cpp" />
     <ClCompile Include="LinkedList\LinkedList.cpp" />
     <ClCompile Include="LinkedList\CircularList.cpp" />
+    <ClCompile Include="Recursion\Recursion.cpp" />
     <ClCompile Include="Stack\Stack.cpp" />
     <ClCompile Include="Stack\ArrayStack.cpp" />
     <ClCompile Include="Queue\Queue.cpp" />
@@ -158,6 +160,11 @@
     <ClInclude Include="LinkedList\CircularList.h" />
     <ClInclude Include="LinkedList\DNode.h" />
     <ClInclude Include="LinkedList\DoublyLinkedList.h" />
+    <ClInclude Include="Recursion\Recursion.h" />
+    <ClInclude Include="Stack\Stack.h" />
+    <ClInclude Include="Stack\ArrayStack.h" />
+    <ClInclude Include="Queue\Queue.h" />
+    <ClInclude Include="Queue\CircularQueue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

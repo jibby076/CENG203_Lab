@@ -24,4 +24,12 @@ public:
     bool insertAt(int index, int value);            // Q5: 0 = front
     bool deleteValue(int value);                    // Q6: first match only
     void merge(LinkedList& other);                  // Q7: empties other
+
+    // ---- Week 5: recursion ----
+    void displayBackward() const;   // 4 3 2 1 - via printBackward
+    void reverse();                 // in place - via reverseFrom
+
+private:
+    static void  printBackward(const Node* node);   // recursive helper
+    static Node* reverseFrom(Node* node);           // returns new head
 };

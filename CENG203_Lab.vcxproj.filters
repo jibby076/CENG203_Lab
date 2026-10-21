@@ -19,6 +19,15 @@
     <Filter Include="LinkedList">
       <UniqueIdentifier>{32DB08AE-10ED-495B-A6F1-475846A21FC3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Stack">
+      <UniqueIdentifier>{C39FDCB6-8FAE-476F-8245-9CC9A3626C86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue">
+      <UniqueIdentifier>{E02D9331-CC9C-427A-9FC5-25FEAC050AF7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Recursion">
+      <UniqueIdentifier>{7E2142B7-4616-4983-B55E-3EBD5CF29835}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -30,17 +39,35 @@
     <ClCompile Include="Labs\Week03.cpp">
       <Filter>Labs</Filter>
     </ClCompile>
+    <ClCompile Include="Labs\Week04.cpp">
+      <Filter>Labs</Filter>
+    </ClCompile>
+    <ClCompile Include="Labs\Week05.cpp">
+      <Filter>Labs</Filter>
+    </ClCompile>
     <ClCompile Include="LinkedList\LinkedList.cpp">
       <Filter>LinkedList</Filter>
     </ClCompile>
     <ClCompile Include="LinkedList\CircularList.cpp">
       <Filter>LinkedList</Filter>
     </ClCompile>
-    <ClCompile Include="Labs\Week04.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="LinkedList\DoublyLinkedList.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack\Stack.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack\ArrayStack.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue\Queue.cpp">
+      <Filter>Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue\CircularQueue.cpp">
+      <Filter>Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion\Recursion.cpp">
+      <Filter>Recursion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +88,21 @@
     </ClInclude>
     <ClInclude Include="LinkedList\DoublyLinkedList.h">
       <Filter>LinkedList</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack\Stack.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack\ArrayStack.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue\Queue.h">
+      <Filter>Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue\CircularQueue.h">
+      <Filter>Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="Recursion\Recursion.h">
+      <Filter>Recursion</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
